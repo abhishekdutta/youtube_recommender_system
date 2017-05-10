@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="CS1951a : Data Science Project">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Youtube API Data Trend</title>
+  </head>
+
+
+
+  <body>
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/pengyangwu/CS1951a">View on GitHub</a>
+          <h1 id="project_title">Final Proposal</h1>
+          <h2 id="project_tagline">CS1951a : Data Science Project</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/pengyangwu/CS1951a/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/pengyangwu/CS1951a/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h2>
+<a id="command-line-youtube-data" class="anchor" href="#" aria-hidden="true"><span class="octicon octicon-link"></span></a>Youtube API Data Trend</h2>
+
+<h4>
+<a id="author-Aaron-Abhishek-Natalie-Preston-Wennie" class="anchor" href="#" aria-hidden="true"><span class="octicon octicon-link"></span></a>Author: Aaron Wu (pwu8), Abhishek Dutta (adutta2), Natalie Roe (nroe), Preston Law (plaw), Wennie Zhang (yzhang46)</h4>
+
+<font size = 5> For Final Proposal Report, please see the pdf file sent to Mentor TA {andreas_karagounis@brown.edu}  </font>
+        
+<p> 
+
+	Orginal file and backup is here:
+	https://docs.google.com/document/d/10OCqVk6b2ZjFBWCTw47U3tD3etcBLm-9G4jdU5JRfv8/edit
+	
+</p>      
+<br><br> 
+<h3><a id="content"><span class="octicon octicon-link"></span></a>I. Vision/Brief Overview	</h3>	
+<p>
+           We plan on building a web application that will display the top 10 videos pertaining to a particular topic on YouTube to a user upon a searchquery. Using the YouTube API, we will be extracting data from all videos uploaded since March 1, 2017. Using machine learning algorithms, we will be predicting labels for videos in our dataset based on their title, description, and user-assigned tags. From the labels that our model assigns the videos, our web application will be able to return to the user the top 10 videos with a particular label. We will rank the videos based on their likes-to-dislikes ratio.
+</p><br><br>					
+<h3><a id="content"><span class="octicon octicon-link"></span></a>II. Data</h3>					
+<p>
+We are still using the dataset mentioned in our midterm report: video and search metadata which have been collected through the YouTube API via an automated grabber script implemented in Python. In addition to this, we've gathered YouTube-8M challenge data from Kaggle. The YouTube API dataset will act as both the training and test samples for our final project. Specifically, we will use title and description data from YouTube videos correlated with the tags for each video. This will be limited in scope to videos posted beginning March 1st to present. The YouTube-8M Kaggle dataset will augment our existing set of tags, giving us more generalized video labels to condense our initial sample into (preserving the relationships between video title/description and tag).
+<br><br>				
+- Cleaning/Storing/Integrating​:
+<br><br>	
+YouTube video metadata is a large dataset, even just what pertains to the small segment of what we are utilizing. Extrapolating from initial pulls, complete video data for the past 3 years would require 35GB of space (given 65,000 videos posted per day and on average .5MB per video). Thus, by deciding to limit our time horizon to the last 90 days and narrow the amount of data we collect and store, we can cut down on this figure substantially, and this still presents us with more than enough of a training set for our ML at approximately 5,850,000 videos.
+<br><br>
+The first step in our process is to translate the collected data to a workable format and store this in a database that can be used by our web application. Only video metadata relevant to our line of inquiry will be processed, including video title, description, like count, dislike count, location of post, and related tags. The database schema will thus appear as in the figure below, where 'related tags' is a string list of user-defined labels delimited by commas.
+</p><br><br>
+<center>
+	<img src="image00.png">
+</center>
+<p><br><br>
+The Kaggle dataset gives us a condensed language framework for the labels retrieved by our Python grabber script, which are matched into such a framework on the basis of equivalence. An 'amusing' label, for instance, will be converted to 'funny' or another synonymous word in the Kaggle CSV so as to condense the total set of label possibilities.
+</p><br><br>					
+<h3><a id="content"><span class="octicon octicon-link"></span></a>III. Methodology</h3>
+<p>
+After cleaning, integrating, and storing our collected data, the second step is to employ our data in predicting tags for the YouTube videos we specify. In doing so, we make use of multi-label learning, a model which maps inputs to binary vectors rather than to scalar outputs, as would be the case in ordinary classification problems. Similarly, in our project, video categorization almost always includes more than one tag. Two main methods for tackling multi-label classification exist: problem transformation methods (those which transform the question into one or more single-label classification or regression instances) and algorithm adaptation methods (those which extend current learning algorithms in order to handle multi-label data). We chose to adapt an existing algorithm, because problem transformation in our case would require an extremely large increase in complexity, converting each of our stand-alone labels into permutations of label sets. Instead, we use a multi-label K-nearest neighbor (ML-KNN) algorithm. ML-KNN uses the kNN algorithm independently for each label l, finding the k nearest examples of videos to the test instance and considering only those labeled with at least l as positive, the rest as negative. Since many performance evaluation metrics for single-label classification fail when applied to multi-label classification, metrics specific to this type of analysis is used, such as Hamming loss (an evaluation of how many times false positives or false negatives appear) and average precision (an evaluation of the average fraction of labels ranked above a particular label l which are actually of the same ranking) rather than accuracy, precision, recall and F-measure.
+<br><br>
+	Our training set is composed of 5,000,000 video title and description pairs each associated with a set of labels, and the task is to predict the label sets of unseen instances with the model created by analyzing our training sample. We use a similar test set of 850,000 correlations.
+<br><br>
+	*Note* If our evaluation metrics are outside of the acceptable threshold, we will need to improve our model using other ML techniques. Sklearn's SVM implementation can return a confidence level along with its prediction which we may be able to use as a threshold indicator for multiple tags. If we don't have time to improve before the presentation deadline, our back-up plan is to perform image analysis on the Keggle dataset using a single-layer neural network in order to predict tags on the basis of video thumbnail (see part VI).
+<br><br>
+On top of this prediction model, we build a video recommendation web app, displaying the top 10 videos for a particular user-chosen tag. This requires Javascript, HTML, and CSS to define the UI and User Experience. As the user types within a text field, a filter is applied to a list of labels, and once a label or group of labels are clicked on, the results associated with them are embedded to the right of the user's selection.
+<br><br>
+	In terms of visualizations, three separate D3 charts are produced, interactivity in two:
+Week by week beginning from the first week of March until present, a line graph displays the top trending tags over time. Interactivity can take the form of automated time progression or user-activated time progression through a slider at the bottom of the chart. Additionally, the machine learning techniques used in the Twitter Sentiment Classification lab are employed  to analyze changing sentiment in the popular tags over time. Thus, as the weekly trends adjust over time, so will the sentiment measure (i.e. color of the plotted line).
+Comparison of our predicted tags to those produced by users for their own videos in the original YouTube dataset provides a performance metric visual. This charts our deviations or lack thereof from the optimal Hamming loss or average precision points. This would represent a good comparison between our model Vs the actual model and would show us the accuracy of our model..
+Overlaying a bubble chart on a map of the world, we show the popularity of the top 10 tags arranged by location, where relative bubble size represents the number of videos with the selected tag posted in a certain part of the world and color represents the tag itself. The integer value of the number of tagged videos is displayed upon hover.
+<br><br>
+References: http://www.comparebusinessproducts.com/fyi/10-largest-databases-in-the-world, http://lpis.csd.auth.gr/publications/tsoumakas-ijdwm.pdf, http://www.sciencedirect.com/science/article/pii/S0031320307000027
+</p><br><br>
+			
+<h3><a id="content"><span class="octicon octicon-link"></span></a>IV. Task List</h3>
+<p>
+Total number of tasks: 5						
+Total number of hours: ~35 hours
+<br><br>		
+Task 1: ​Write a Python script that will extract our YouTube data and clean it. We will then store this data in a database and write the data to readable CSV files. (~5 hours)
+<br><br>				
+Task 2: ​Use either SVM or multi-label k nearest neighbor algorithm to assign labels to YouTube videos. Our label predictor should be able to identify the best labels for a particular video based on the video’s title, description, and user-defined tags. (~12 hours)
+<br><br>						
+Task 3: ​Apply our predictor model on our test data. Our goal is to aim for Hamming Loss close to zero and average precision above 85%. (~5hours)
+<br><br>
+Task 4: Create the three visualizations that we described in section III using D3. (~5 hours)
+<br><br>						
+Task 5: ​Design a web app using JavaScript, HTML, and CSS that asks the user to select a label and displays the top 10 video recommendations based on our prediction model.  (~8 hours)
+</p><br><br>					
+
+<h3><a id="content"><span class="octicon octicon-link"></span></a>V. Deliverables</h3>			
+<p>		
+● 75%: This is the bare minimum that we want to accomplish for this project.			
+We will create a web application that returns YouTube video recommendations based on the labels that our ML algorithm assigns to videos in our dataset. The user will enter a keyword that corresponds to one of our labels, and our web app will return the top ten videos with that particular label.	
+<br><br>				
+● 100%: This is what we are aiming to accomplish in our project, keeping in mind realistic circumstances.
+Our web application will be able to return the top ten YouTube video recommendations with Hamming Loss under 10% and average precision above 85%.		
+<br><br>
+● 125%: This is what we want to be able to achieve in our project in the most ideal world where everything goes according to plan.						
+Our web application will be able to return the top ten YouTube video recommendations with Hamming Loss less than 2% and average precision above 95%.
+</p><br><br>				
+<h3><a id="content"><span class="octicon octicon-link"></span></a>VI. Backup Plan</h3>	
+<p>
+If we encounter any unfortunate circumstances that prevent us from continuing with our project as we have outlined it, we will pursue a Kaggle challenge as our alternative approach. We will use the data provided for the Kaggle YouTube-8M challenge, which consists of the records containing information about the title, labels, mean rgb values, and mean audio for a set of YouTube videos. We would also be doing a feature analysis of the videos in order to achieve better results with greater accuracy. Using this data, we will build a single-layer neural network to process the the records and assign labels to those records using our existing set of labels (which was taken from the YouTube-8M challenge anyway). With this, we will still be able to build our user-recommendation web app because we will have assigned labels to the videos in our data set. This alternative approach does not differ much from our original except for the usage of TensorFlow for the ML component, which would allow us to generate the same types of visualizations. However, this is still our backup plan and we hope that it will not be necessary for us to execute it.
+<br><br>
+<a href="https://github.com/PrestonLaw/CSCI1951AProject/tree/master">GitHub Repo</a>
+</p>
+
+
+        
+  
+
+
+<p>Home Page # is: <a href="https://pengyangwu.github.io/CS1951a/"> here </a>.</p>
+<canvas id="nokey" width="20" height="20">If Empty, Means Your Browser Don't Support Canvas. Please Use Chrome Browser ^_^``</canvas>
+<script src="javascripts/index2_line.js"> </script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+	      
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright"> This page created by <a href="https://github.com/pengyangwu/CS1951a">pwu8</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>

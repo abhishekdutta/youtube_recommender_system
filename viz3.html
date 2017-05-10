@@ -1,0 +1,230 @@
+<html>
+<head>
+<title>Viz 3</title>
+<script type="text/javascript" src="http://static.fusioncharts.com/code/latest/fusioncharts.js"></script>
+<script type="text/javascript" src="http://static.fusioncharts.com/code/latest/themes/fusioncharts.theme.fint.js?cacheBust=56"></script>
+<script type="text/javascript">
+
+
+// Sentiment analysis visualization
+// Showing sentiment score for each video (Positive, Neutral, Negative) - with different colors
+// Sliding bar chart functionality
+
+FusionCharts.ready(function(){
+    var salesChart = new FusionCharts({
+        type: 'scrollstackedcolumn2d',
+        dataFormat: 'json',
+        renderAt: 'chart-container',
+        width: '1100',
+        height: '700',
+        dataSource: {
+            "chart": {
+                "caption": "Sentiment Analysis Visualization based on Different Videos - Bar Chart",
+                "subCaption": "(-: Negative Video,  +: Positive Video) <br> Notice: Please slide *grey horizontal scroll bar* in the bottom to see full visualization!)",
+
+                "captionFontSize": "18",
+                "subcaptionFontSize": "18",
+                "subcaptionFontBold": "0",
+                "xaxisname": "Video Title on the YouTube Website",
+                "yaxisname": "Sentiment Value",
+                "showvalues": "0",
+                "numberprefix": "",
+                "legendBgAlpha": "0",
+                "legendBorderAlpha": "0",
+                "legendShadow": "0",
+                "showborder": "0",
+                "bgcolor": "#ffffff",
+                "showalternatehgridcolor": "0",
+                "showplotborder": "0",
+                "showcanvasborder": "",
+                "legendshadow": "0",
+                "plotgradientcolor": "",
+                "showCanvasBorder": "0",
+                "showAxisLines": "1",
+                "showAlternateHGridColor": "0",
+                "divlineAlpha": "100",
+                "divlineThickness": "1",
+                "divLineIsDashed": "1",
+                "divLineDashLen": "1",
+                "divLineGapLen": "1",
+                "lineThickness": "3",
+                "flatScrollBars": "1",
+                "scrollheight": "20",
+                "numVisiblePlot": "15",
+                "showHoverEffect":"1"
+            },
+            "categories": [
+                {
+                    "category": [
+
+            {
+                "label": "WikiLeaks PROVES Beyond A Shadow Of A  Doubt That Clinton Linked to Vince Foster"
+            },
+
+            {
+                "label": "Aula CAMPE sobre a Forma NEGATIVA em Ingls  META 1000 LIKES"
+            }, {
+                "label": "ChanBaek  during EXOrDIUM IN MANILA 2017"
+            }, {
+                "label": "CLOSED Giveaway  Custom No Thinkin Shorts"
+            }, {
+                "label": "David Leyonhjelm on Outlast 2 The Witcher and video game censorship"
+            }, {
+                "label": "Do you even know me"
+            }, {
+                "label": "EL SEOR DE ZACATECAS LOS BUCHONES DE CULIACAN VIDEO OFICIAL 2017"
+            }, {
+                "label": "FFBreak UpJungkook 12"
+            }, {
+                "label": "HOW TO HOLD A TODDLER"
+            }, {
+                "label": "HUGE iPHONE 7 PLUS GIVEAWAY OPEN  NEW SEPHORA MAKEUP GIVEAWAY 2 WINNERS"
+            }, {
+                "label": "ONE OF THESE THINGS IS NOT LIKE THE OTHER  Black Gun Smuggling Mob in Brooklyn"
+            }, {
+                "label": "in love with a ghost lets walk across this forest i can feel that everything is real again"
+            }, {
+                "label": "in love with a ghost  me crying and glitching then realizing there is still chocolate dodie rmxd"
+            }, {
+                "label": "Kitten Close Up 20170415"
+            }, {
+                "label": "LANEIGE Two Tone Tint Lip Bars  ALL 8 Shades Lip Bar Review  Lip Swatches"
+            }, {
+                "label": "Lorac  Pirates of the Caribbean Makeup Review  Giveaway"
+
+
+
+            }, {
+                "label": "Maayavan Official Full Songs  CVKumar  Sundeep Kishan Lavanya Tripathi Jackie Shroff  Ghibran"
+            }, {
+                "label": "Mascot Costumes  Custom Mascot Costumes"
+            }, {
+                "label": "miles chronicles twitter videos  a lot of singing"
+            }, {
+                "label": "MV Highlight    Plz dont be sad Performance ver"
+            }, {
+                "label": "ONE OF THESE THINGS IS NOT LIKE THE OTHER  Black Gun Smuggling Mob in Brooklyn"
+            }, {
+                "label": "Pick Your Own Prize Giveaway CLOSED"
+
+
+
+            }, {
+                "label": "UPDATE VIDEO EXCITING NEWS  WHIPPED CREAM SPELLING CHALLENGE"
+            }, {
+                "label": "Zulu Language"
+            }
+            
+                    ]
+                }
+            ],
+            "dataset": [
+                {
+                    "seriesname": "Negative Videos",
+                    "color": "008ee4",
+                    "data": [
+                        { "value": "-37" },
+                        { "value": "0" },
+                        { "value": "0" },
+
+                        { "value": "0" },
+                        { "value": "0" },
+
+                        { "value": "0" },
+                        { "value": "-1.558" },
+
+
+                        { "value": "-15.5" },
+                        { "value": "0" },
+
+                        { "value": "0" },
+                        { "value": "-18" },
+
+                        
+                        
+                        
+                        
+                        { "value": "0" },
+                        { "value": "0" },
+
+                        { "value": "0" },
+                        { "value": "0" },
+                        { "value": "0" },
+                        { "value": "0" },
+                        { "value": "0" },
+                        { "value": "0" },
+
+                        { "value": "0" },
+                        { "value": "0" },
+                        { "value": "0" },
+                        { "value": "0" },
+                        { "value": "-17" },
+                        { "value": "0" },
+         
+                       
+                        { "value": "0" },
+                        { "value": "0" }
+                    ]
+                },
+                {
+                    "seriesname": "Positive Videos",
+                    "color": "f45b00",
+                    "data": [
+                        { "value": "0" },
+                        { "value": "13.8047368421052" },
+                        { "value": "18.351" },
+
+
+                        { "value": "4.889" },
+                        { "value": "15.8754545454545" },
+
+
+                        { "value": "33.0277272727272" },
+                        { "value": "0" },
+
+
+                        { "value": "0" },
+                        { "value": "33.8" },
+
+                        { "value": "14.47" },
+                        { "value": "0" },
+
+                       
+                        
+                        
+                       
+                        { "value": "35" },
+                        { "value": "46" },
+
+                        { "value": "36" },
+                        { "value": "48" },
+                        { "value": "64" },
+                        { "value": "68" },
+                        { "value": "10" },
+                        { "value": "43" },
+
+                        { "value": "54" },
+                        { "value": "33" },
+                        { "value": "16" },
+                        { "value": "13" },
+                        { "value": "0" },
+                        { "value": "40" },
+         
+                       
+                        { "value": "45" },
+                        { "value": "42.33" }
+                    ]
+                }
+            ]
+        }
+    }).render();
+});
+
+
+
+</script>
+</head>
+<body>
+  <div id="chart-container">FusionCharts XT will load here!</div>
+</body>
+</html>

@@ -1,0 +1,441 @@
+<html>
+<head>
+<title>Youtube Data Project: Visualization Part B - Accuracy Visualization</title>
+<script type="text/javascript" src="http://static.fusioncharts.com/code/latest/fusioncharts.js"></script>
+<script type="text/javascript" src="http://static.fusioncharts.com/code/latest/themes/fusioncharts.theme.fint.js?cacheBust=56"></script>
+<script type="text/javascript">
+
+// Accuracy visualization [Aaron]:-
+// Showing the number of videos for each label [Predicted Vs Actual] - different colors 
+// Sliding bar chart functionality
+
+
+
+  FusionCharts.ready(function(){
+    var fusioncharts = new FusionCharts({
+    type: 'scrollcombidy2d',
+    renderAt: 'chart-container',
+    width: '1100',
+    height: '650',
+    dataFormat: 'json',
+    dataSource: {
+        "chart": {
+            "caption": "Youtube Data Sci Project: Viz Part B - Accuracy Visualization",
+            "subCaption": "(Notice: Please slide *grey horizontal scroll bar* in the bottom to see full visualization!)",
+            "captionFontSize": "18",
+            "subcaptionFontSize": "18",
+            "subcaptionFontBold": "0",
+            "xAxisname": "Label Name of Videos",
+            "pYAxisName": "Number of Total Actual Videos (Blue), Correctly Predicted Videos (Green)",
+            "sYAxisName": "Predicted Accuracy Percentage %",
+            "numberPrefix": "＋",
+            "sNumberSuffix": "%",
+            "sYAxisMaxValue": "20",
+            "paletteColors": "#0075c2,#1aaf5d,#f2c500",
+            "showAlternateHGridColor": "0",
+            "showPlotBorder": "0",
+            "usePlotGradientColor": "0",
+            "baseFontColor": "#333333",
+            "baseFont": "Helvetica Neue,Arial",
+            "showBorder": "0",
+            "bgColor": "#ffffff",
+            "showShadow": "0",
+            "canvasBgColor": "#ffffff",
+            "showCanvasBorder": "0",
+            "legendBorderAlpha": "0",
+            "legendShadow": "0",
+            "showValues": "1",
+            "divlineAlpha": "100",
+            "divlineColor": "#999999",
+            "divlineThickness": "1",
+            "divLineIsDashed": "1",
+            "divLineDashLen": "1",
+            "divLineGapLen": "1",
+            "numVisiblePlot": "12",
+            "flatScrollBars": "1",
+            "scrollheight": "25"
+        },
+        "categories": [{
+            "category": [
+            {
+                "label": "interactive entertainment"
+            }, {
+                "label": "full episode"
+            }, {
+                "label": "latest"
+            }, {
+                "label": "serial"
+            }, {
+                "label": "episode"
+            }, {
+                "label": "today"
+            }, {
+                "label": "funny"
+            }, {
+                "label": "today episode"
+            }, {
+                "label": "tell"
+            }, {
+                "label": "colors"
+            }, {
+                "label": "trump"
+            }, {
+                "label": "comedy"
+            }, {
+                "label": "star plus"
+            }, {
+                "label": "location"
+            }, {
+                "label": "love"
+            }, {
+                "label": "romantic"
+            }, {
+                "label": "new"
+            }, {
+                "label": "cartoon"
+            }, {
+                "label": "learn"
+            }, {
+                "label": "game"
+            }, {
+                "label": "fat"
+            }, {
+                "label": "review"
+            }, {
+                "label": "4th may 2017"
+            }, {
+                "label": "news"
+            }
+
+
+
+
+            , {
+                "label": "equipment"
+            }, {
+                "label": "esclavage"
+            }, {
+                "label": "essay"
+            }, {
+                "label": "evidence"
+            }, {
+                "label": "evil within"
+            }
+
+
+            , {
+                "label": "finger family"
+            }, {
+                "label": "footage"
+            }, {
+                "label": "family guy"
+            }, {
+                "label": "fasion design major"
+            }, {
+                "label": "feild"
+            }
+
+
+            ]
+        }],
+        "dataset": [{
+            "seriesName": "Number of Total Actual Videos in this Label",
+            "data": [{
+                "value": "20"
+            }, {
+                "value": "77"
+            }, {
+                "value": "45"
+            }, {
+                "value": "64"
+            }, {
+                "value": "46"
+            }, {
+                "value": "41"
+            }, {
+                "value": "61"
+            }, {
+                "value": "32"
+            }, {
+                "value": "23"
+            }, {
+                "value": "42"
+            }, {
+                "value": "42"
+            }, {
+                "value": "64"
+            }, {
+                "value": "26"
+            }, {
+                "value": "22"
+            }, {
+                "value": "39"
+            }, {
+                "value": "24"
+            }, {
+                "value": "47"
+            }, {
+                "value": "38"
+            }, {
+                "value": "22"
+            }, {
+                "value": "23"
+            }, {
+                "value": "20"
+            }, {
+                "value": "24"
+            }, {
+                "value": "26"
+            }, {
+                "value": "148"
+            }
+            , {
+                "value": "9"
+            }, {
+                "value": "8"
+            }, {
+                "value": "10"
+            }, {
+                "value": "8"
+            }, {
+                "value": "9"
+            }
+            , {
+                "value": "12"
+            }, {
+                "value": "10"
+            }, {
+                "value": "14"
+            }, {
+                "value": "10"
+            }, {
+                "value": "9"
+            }
+
+
+            ]
+        }, {
+            "seriesName": "Number of Correctly Predicted Videos in this Label",
+            "renderAs": "area",
+            "showValues": "1",
+            "data": [{
+                "value": "12"
+            }, {
+                "value": "48"
+            }, {
+                "value": "43"
+            }, {
+                "value": "44"
+            }, {
+                "value": "42"
+            }, {
+                "value": "40"
+            }, {
+                "value": "32"
+            }, {
+                "value": "26"
+            }, {
+                "value": "12"
+            }, {
+                "value": "25"
+            }, {
+                "value": "24"
+            }, {
+                "value": "23"
+            }, {
+                "value": "22"
+            }, {
+                "value": "21"
+            }, {
+                "value": "21"
+            }, {
+                "value": "18"
+            }, {
+                "value": "18"
+            }, {
+                "value": "16"
+            }, {
+                "value": "16"
+            }, {
+                "value": "14"
+            }, {
+                "value": "14"
+            }, {
+                "value": "14"
+            }, {
+                "value": "25"
+            }, {
+                "value": "59"
+            }
+            , {
+                "value": "13"
+            }, {
+                "value": "8"
+            }, {
+                "value": "8"
+            }, {
+                "value": "8"
+            }, {
+                "value": "8"
+            }
+            , {
+                "value": "7"
+            }, {
+                "value": "8"
+            }, {
+                "value": "8"
+            }, {
+                "value": "10"
+            }, {
+                "value": "12"
+            }
+
+
+            ]
+        }, {
+
+
+            //     "label": "interactive entertainment"
+            // }, {
+            //     "label": "full episode"
+            // }, {
+            //     "label": "serial"
+            // }, {
+            //     "label": "latest"
+            // }, {
+            //     "label": "episode"
+            // }, {
+            //     "label": "today"
+            // }, {
+            //     "label": "funny"
+            // }, {
+            //     "label": "today episode"
+            // }, {
+            //     "label": "tell"
+            // }, {
+            //     "label": "colors"
+            // }, {
+            //     "label": "trump"
+            // }, {
+            //     "label": "comedy"
+            // }, {
+            //     "label": "star plus"
+            // }, {
+            //     "label": "location"
+            // }, {
+            //     "label": "love"
+            // }, {
+            //     "label": "romantic"
+            // }, {
+            //     "label": "new"
+            // }, {
+            //     "label": "cartoon"
+            // }, {
+            //     "label": "learn"
+            // }, {
+            //     "label": "game"
+            // }, {
+            //     "label": "fat"
+            // }, {
+            //     "label": "review"
+            // }, {
+            //     "label": "4th may 2017"
+            // }, {
+            //     "label": "news"
+
+
+
+            "seriesName": "Accuracy Percentage %",
+            "parentYAxis": "S",
+            "renderAs": "line",
+            "showValues": "1",
+            "data": [{
+                "value": "60"
+            }, {
+                "value": "62"
+            }, {
+                "value": "68"
+            }, {
+                "value": "95"
+            }, {
+                "value": "91"
+            }, {
+                "value": "97"
+            }, {
+                "value": "52"
+            }, {
+                "value": "81"
+            }, {
+                "value": "56"
+            }, {
+                "value": "59"
+            }, {
+                "value": "57"
+            }, {
+                "value": "36"
+            }, {
+                "value": "84"
+            }, {
+                "value": "95"
+            }, {
+                "value": "53"
+            }, {
+                "value": "75"
+            }, {
+                "value": "38"
+            }, {
+                "value": "42"
+            }, {
+                "value": "72"
+            }, {
+                "value": "60"
+            }, {
+                "value": "70"
+            }, {
+                "value": "58"
+            }, {
+                "value": "92"
+            }, {
+                "value": "39"
+            }
+            , {
+                "value": "82"
+            }, {
+                "value": "84"
+            }, {
+                "value": "98"
+            }, {
+                "value": "92"
+            }, {
+                "value": "89"
+            }
+            , {
+                "value": "80"
+            }, {
+                "value": "92"
+            }, {
+                "value": "88"
+            }, {
+                "value": "92"
+            }, {
+                "value": "79"
+            }
+
+
+
+
+            ]
+        }]
+    }
+}
+);
+    fusioncharts.render();
+});
+</script>
+</head>
+<body>
+  <div id="chart-container">FusionCharts XT will load here!</div>
+  <div id="chart-container">* If no viz shows here, this means your Chrome browser blocked our js, plz click the rightmost *shield icon* of browser's address input bar, then select "Load unsafe scripts". (btw it used js-online, not js unsafe)</div>
+
+</body>
+</html>

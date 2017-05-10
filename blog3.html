@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="CS1951a : Data Science Project">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Blog Post 3</title>
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/pengyangwu/CS1951a">View on GitHub</a>
+          <h1 id="project_title">Blog Post #3</h1>
+          <h2 id="project_tagline">CS1951a : Data Science Project</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/pengyangwu/CS1951a/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/pengyangwu/CS1951a/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h2>
+<a id="command-line-youtube-data" class="anchor" href="#" aria-hidden="true"><span class="octicon octicon-link"></span></a>Youtube API Data Trend</h2>
+
+<h4>
+<a id="author-Aaron-Abhishek-Natalie-Preston-Wennie" class="anchor" href="#" aria-hidden="true"><span class="octicon octicon-link"></span></a>Author: Aaron Wu (pwu8), Abhishek Dutta (adutta2), Natalie Roe (nroe), Preston Law (plaw), Wennie Zhang (yzhang46)</h4>
+
+<br>
+<h3>
+<a id="content"><span class="octicon octicon-link"></span></a>This Week's Work</h3>
+<p>Since our last blog post, we have had to refine our focus for this project as a group. Specifically, we wanted to focus on performing analysis to answer a specific question about our data. Since our data set is so large (we have access to data pertaining to every video on YouTube), we knew we had to scale down the data that we would be using for this assignment to some subcategory of YouTube videos. We decided that we will be analyzing the most recently uploaded videos onto YouTube since March 1 2017. From these videos, we will be extracting information from the title, description, and user-defined tags to perform our analysis.
+</p>
+
+<p>We also shifted the focus of the analysis that we will be performing on our data. We will be using ML to predict labels for YouTube videos based on each video’s title, description, and tags defined by the user. We obtained a set of labels from the Kaggle YouTube-8M challenge and we will be assigning one or more labels to each video in our dataset. These labels include Games, Concert, Vehicle, etc. From this, then want to have our web application be able to return the top ten videos with a particular label based on a user’s query. Furthermore, a couple visualizations that we are planning to do with our data include:
+</p>
+<ul>
+  <li>Plotting the how particular labels trend over the course of time along with the sentiments of the labels</li>
+  <li>Showing how popular videos with a particular tag are in different areas of the world</li>
+  <li>Comparing how our labels compare to the tags that users assign to their own videos and seeing if users are actually accurate when tagging their videos </li>
+</ul>
+
+<p>While our previous visualizations and analysis are not exactly related to our new focus, they helped familiarize us with our data and through our exploration we gained a strong understanding for all of the information that our data provides, which ultimately led us to to path that we are currently pursuing with our project. Please see our Final Proposal for more information.</p>
+  
+  
+<h3>
+<a id="content"><span class="octicon octicon-link"></span></a>Moving Forward</h3>
+<ol>
+  <li>Grab the title, description, and user-inputted tags from our set of YouTube videos</li>
+  <li>Clean the data so that we stem words, remove caps, etc.</li>
+  <li>Fit the data with our labels which are from YouTube-8M. We are considering using SVM or a multi-label nearest neighbor algorithm: <a href='http://www.sciencedirect.com/science/article/pii/S0031320307000027'>multi-label nearest neighbor algorithm</a></li>
+  <li>Create visualizations from our data (we will likely be using D3)</li>
+  <li>Create an interactive web application that will allow users to search for keywords and get back the Top 10 YouTube videos that have the keyword as a tag.</li>
+</ol>    
+
+<p>Home Page # is: <a href="https://pengyangwu.github.io/CS1951a/"> here </a>.</p>
+<canvas id="nokey" width="20" height="20">If Empty, Means Your Browser Don't Support Canvas. Please Use Chrome Browser ^_^``</canvas>
+<script src="javascripts/index2_line.js"> </script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+        
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright"> This page created by <a href="https://github.com/pengyangwu/CS1951a">pwu8</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>

@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>Viz 3</title>
+<script type="text/javascript" src="http://static.fusioncharts.com/code/latest/fusioncharts.js"></script>
+<script type="text/javascript" src="http://static.fusioncharts.com/code/latest/themes/fusioncharts.theme.fint.js?cacheBust=56"></script>
+<script type="text/javascript">
+
+
+// Sentiment analysis visualization
+// Showing sentiment score for each video (Positive, Neutral, Negative) - with different colors
+// Sliding bar chart functionality
+
+FusionCharts.ready(function () {
+    var revenueChart = new FusionCharts({
+        type: 'doughnut3d',
+        renderAt: 'chart-container',
+        width: '900',
+        height: '600',
+        dataFormat: 'json',
+        dataSource: {
+            "chart": {
+                "caption": "Sentiment Analysis Visualization - Pie Chart",
+                "subCaption": "Total of All Selected Videos\n\n* Notice: click 'Negative/Neutral/Positive' in the buttom to see special effect *",
+                "numberPrefix": "$",
+                "paletteColors": "#0075c2,   #f2c500,   #f45b00",
+
+                "bgColor": "#ffffff",
+                "showBorder": "0",
+                "use3DLighting": "1",
+                "showShadow": "1",
+                "enableSmartLabels": "0",
+                "startingAngle": "310",
+                "showLabels": "1",
+                "showPercentValues": "1",
+                "showLegend": "1",
+                "legendShadow": "1",
+                "legendBorderAlpha": "1",                                
+                "decimals": "0",
+                "captionFontSize": "14",
+                "subcaptionFontSize": "14",
+                "subcaptionFontBold": "0",
+                "toolTipColor": "#ffffff",
+                "toolTipBorderThickness": "0",
+                "toolTipBgColor": "#000000",
+                "toolTipBgAlpha": "80",
+                "toolTipBorderRadius": "2",
+                "toolTipPadding": "5",
+            },
+            "data": [
+                {
+                    "label": "Negative Videos",
+                    "value": "14"
+                }, 
+                {
+                    "label": "Neutral Videos",
+                    "value": "12"
+                }, 
+                {
+                    "label": "Positive Videos",
+                    "value": "74"
+                }
+            ]
+        }
+    }).render();
+});
+
+
+
+</script>
+</head>
+<body>
+ <div id="chart-container">FusionCharts XT will load here!</div>
+ <div id="chart-container">* If no viz shows here, this means your Chrome browser blocked our js, plz click the rightmost *shield icon* of browser's address input bar, then select "Load unsafe scripts". (btw it used js-online, not js unsafe)</div>
+</body>
+</html>
+

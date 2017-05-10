@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="CS1951a : Data Science Project">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Blog Post 4</title>
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/pengyangwu/CS1951a">View on GitHub</a>
+          <h1 id="project_title">Blog Post #4</h1>
+          <h2 id="project_tagline">CS1951a : Data Science Project</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/pengyangwu/CS1951a/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/pengyangwu/CS1951a/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h2>
+<a id="command-line-youtube-data" class="anchor" href="#" aria-hidden="true"><span class="octicon octicon-link"></span></a>Youtube API Data Trend</h2>
+
+<h4>
+<a id="author-Aaron-Abhishek-Natalie-Preston-Wennie" class="anchor" href="#" aria-hidden="true"><span class="octicon octicon-link"></span></a>Author: Aaron Wu (pwu8), Abhishek Dutta (adutta2), Natalie Roe (nroe), Preston Law (plaw), Wennie Zhang (yzhang46)</h4>
+
+<br>
+<h3>
+<a id="content"><span class="octicon octicon-link"></span></a>This Week's Work</h3>
+<p>We have seen good progress this week. In terms of our timeline, we have finished extracting, cleaning, and condensing the data.
+</p>
+
+<img src="images/timeline.jpg" align="middle">
+
+<p>We extracted data from the most recently uploaded YouTube videos since March 1, 2017. However, due to limits in the YouTube API, we need more time to extract more data. Nevertheless, the data we extracted includes the Id, Title, Description, LikeCount, DislikeCount, Location, and Tags for each particular video. We will be using the Title, Description, and Tags for our tag prediction. In order to do our tag prediction, we needed to condense the set of tags that we obtained from the YouTube videos. We used the Synonym library from Python to find synonyms between video tags so that we could condense them. Here is a look of our set of tags after condensing synonyms:
+</p>
+
+<img src="images/condensed_tags.png" align="middle">
+
+<p>We will be training our classifier to identify which tags correspond to which videos. From our set of tags and the data we pulled from YouTube, we have our training and testing data. In the data for our training and testing, we condensed the Tags column from the data we obtained from YouTube to be condensed tags from our list. Below are some images of our final data set:</p>
+  
+<img src="images/data1.png" align="middle">
+
+<img src="images/data2.png" align="middle">
+
+<img src="images/data3.png" align="middle">
+
+<p>This week, we also set up our tag-predictor and sentiment analysis models. However, since we do not yet have all of our data from YouTube due to limitations in the API, we have not ran our models on the data yet. However, we were able to run them on a small set of data that we created to be similar to what the data from YouTube is. Below are some images of our ML on the small set of data we used so far. </p>
+
+<img src="images/ml1.png" align="middle">
+
+<img src="images/ml2.png" align="middle">
+
+<p>We hope that as we progress the accuracy of our model will continue to be very high.
+</p>
+
+<h3>
+<a id="content"><span class="octicon octicon-link"></span></a>Challenges</h3>
+<p>A challenge that we are working on overcoming is dealing with very specific user-defined tags such as “happy parrot” and “sad parrot”. Ideally, we would like to condense both into the tag “parrot”. However, we cannot simply split on the space of the tag or else tags such as “United Kingdom” and “United States” will be split as well when they should not be. Ideally, we would like to be able to find a better way to deal with the types of specific tags we mentioned above, but if we cannot find a method that will preserve the accuracy of our model, we may just leave the tags as is.</p>
+<p>Another challenge is dealing with YouTube videos with tags in another language. We are considering either completely removing them from our dataset, or including them anyway in our ML analysis. We are currently coming up with ways to manage these types of videos, but they do not comprise a large proportion of our dataset so this is not too big of an issue to resolve. 
+</p>
+
+<h3>
+<a id="content"><span class="octicon octicon-link"></span></a>Goals for Upcoming Week</h3>
+<p>Our goals moving forward are to start on the three visualizations we outline in the final proposal so that we can get those done in time for the poster printing deadline (May 2). We will also be finalizing our web application so that we can host it on this project website.</p>  
+
+<p>Home Page # is: <a href="https://pengyangwu.github.io/CS1951a/"> here </a>.</p>
+<canvas id="nokey" width="20" height="20">If Empty, Means Your Browser Don't Support Canvas. Please Use Chrome Browser ^_^``</canvas>
+<script src="javascripts/index2_line.js"> </script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+        
+        
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright"> This page created by <a href="https://github.com/pengyangwu/CS1951a">pwu8</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
