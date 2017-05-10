@@ -3,7 +3,7 @@
 We are using YouTube videos to analyze interesting trends and predict tags associated with each video and perform sentiment analysis on those videos.
 
 ---------------------------------------------------------
-## This is the Data Scienec (CS1951a) Final Project Website [[Click Here]](https://pengyangwu.github.io/CS1951a/)
+## This is the Data Science (CS1951a) Final Project Website [[Click Here]](https://pengyangwu.github.io/CS1951a/)
 ---------------------------------------------------------
 ##        Front end  
 
