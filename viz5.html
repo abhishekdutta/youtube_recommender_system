@@ -1,0 +1,567 @@
+<html>
+<head>
+<title>Viz 3</title>
+<script type="text/javascript" src="http://static.fusioncharts.com/code/latest/fusioncharts.js"></script>
+<script type="text/javascript" src="http://static.fusioncharts.com/code/latest/themes/fusioncharts.theme.fint.js?cacheBust=56"></script>
+<script type="text/javascript">
+
+
+// Sentiment analysis visualization
+
+
+FusionCharts.ready(function() {
+  var salesChart = new FusionCharts({
+      type: 'msline',
+      renderAt: 'chart-container',
+      width: '1200',
+      height: '800',
+      dataFormat: 'json',
+      dataSource: {
+        "chart": {
+          "caption": "Top 10 Videos' Sentiment Analysis over Time ",
+          "subcaption": "(During April, 2017 on YouTube website)",
+          "linethickness": "2",
+          "numberPrefix": "",
+          "showvalues": "0",
+          "formatnumberscale": "1",
+          "labeldisplay": "ROTATE",
+          "slantlabels": "1",
+          "divLineAlpha": "40",
+          "anchoralpha": "0",
+          "animation": "1",
+          "legendborderalpha": "20",
+          "drawCrossLine": "1",
+          "crossLineColor": "#0d0d0d",
+          "crossLineAlpha": "100",
+          "tooltipGrayOutColor": "#80bfff",
+          "theme": "zune"
+        },
+        "categories": [{
+          "category": [{
+            "label": "4/1/2017"
+          }, {
+            "label": "4/2/2017"
+          }, {
+            "label": "4/3/2017"
+          }, {
+            "label": "4/4/2017"
+          }, {
+            "label": "4/5/2017"
+          }, {
+            "label": "4/6/2017"
+          }, {
+            "label": "4/7/2017"
+          }, {
+            "label": "4/8/2017"
+          }, {
+            "label": "4/9/2017"
+          }, {
+            "label": "4/10/2017"
+          }, {
+            "label": "4/11/2017"
+          }, {
+            "label": "4/12/2017"
+          }, {
+            "label": "4/13/2017"
+          }, {
+            "label": "4/14/2017"
+          }, {
+            "label": "4/15/2017"
+          }, {
+            "label": "4/16/2017"
+          }, {
+            "label": "4/17/2017"
+          }, {
+            "label": "4/18/2017"
+          }, {
+            "label": "4/19/2017"
+          }, {
+            "label": "4/20/2017"
+          }]
+        }],
+        "dataset": [{
+          "seriesname": "Video ID: 5qDMqPmdFGU",
+          "data": [{
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "30.135"
+          }, {
+            "value": "33.44"
+          }, {
+            "value": "75.06"
+
+          }, {
+            "value": "44.04"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "67.9"
+
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "-7.72"
+          }]
+        }, {
+          "seriesname": "Video ID: bfg593CAv1I",
+          "data": [{
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "70"
+          }, {
+            "value": "98"
+          }, {
+            "value": "44"
+          }, {
+            "value": "0"
+          }, {
+            "value": "31"
+          }, {
+            "value": "0"
+          }, {
+            "value": "59"
+          }, {
+            "value": "30"
+          }, {
+            "value": "0"
+          }, {
+            "value": "31"
+          }, {
+            "value": "0"
+          }, {
+            "value": "63"
+          }]
+        }, 
+
+
+        {
+          "seriesname": "Video ID: KVFGlp6MuN4",
+          "data": [{
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "63"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "82"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "64"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "1"
+          }, {
+            "value": "0"
+          }]
+        }, 
+
+
+
+
+                {
+          "seriesname": "Video ID: NQ5k5F1c7Pg",
+          "data": [{
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "33"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "-38.1"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "20"
+          }, {
+            "value": "24"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }]
+        }, 
+
+
+
+
+                {
+          "seriesname": "Video ID: Rx08aSoh4IA",
+          "data": [{
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "3"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "46"
+          }, {
+            "value": "21"
+          }, {
+            "value": "-3"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "4"
+          }, {
+            "value": "0"
+          }, {
+            "value": "-17"
+          }, {
+            "value": "0"
+          }, {
+            "value": "1"
+          }, {
+            "value": "0"
+          }]
+        }, 
+
+
+
+                {
+          "seriesname": "Video ID: cN2EP1ZC5Rk",
+          "data": [{
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "3"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "2"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "4"
+          }, {
+            "value": "0"
+          }, {
+            "value": "56.49"
+          }, {
+            "value": "9.8"
+          }, {
+            "value": "1"
+          }, {
+            "value": "36"
+          }]
+        }, 
+
+
+                {
+          "seriesname": "Video ID: yRu1gGu0AsU",
+          "data": [{
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "3"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "2"
+          }, {
+            "value": "18"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "-10"
+          }, {
+            "value": "4"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "1"
+          }, {
+            "value": "29"
+          }]
+        }, 
+
+
+
+                {
+          "seriesname": "Video ID: 5y2OODNxcMY",
+          "data": [{
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "3"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "62"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "4"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }]
+        }, 
+
+
+
+
+
+
+                {
+          "seriesname": "Video ID: po_A_XDU3mI",
+          "data": [{
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "40"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "90"
+          }, {
+            "value": "46"
+          }, {
+            "value": "21"
+          }, {
+            "value": "75"
+          }]
+        }, 
+
+
+
+
+
+        {
+          "seriesname": "Video ID: H4KNMg-lI-s",
+          "data": [{
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "35"
+          }, {
+            "value": "2.9"
+          }, {
+            "value": "43"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "0"
+          }, {
+            "value": "-60"
+          }, {
+            "value": "0"
+          }]
+        }]
+      }
+    })
+    .render();
+});
+
+
+
+</script>
+</head>
+<body>
+ <div id="chart-container">FusionCharts XT will load here!</div>
+ <div id="chart-container">* If no viz shows here, this means your Chrome browser blocked our js, plz click the rightmost *shield icon* of browser's address input bar, then select "Load unsafe scripts". (btw it used js-online, not js unsafe)</div>
+</body>
+</html>
+
