@@ -29,7 +29,7 @@ We are using YouTube videos to analyze interesting trends and predict tags assoc
 
 ## Back-end (Part 2) source code is here:
 
-## https://github.com/abhishekdutta/youtube-data-trends-predictor
+## https://github.com/abhishekdutta/youtube_tag_predictor_sentiment_analysis
 
 ##    Files:  <code>ipython notebook/python</code>
 ---------------------------------------------------------
