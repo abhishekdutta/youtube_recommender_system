@@ -1,6 +1,6 @@
 # youtube_recommender_system
 
-We are using YouTube videos to analyze interesting trends and predict tags associated with each video and perform sentiment analysis on those videos.
+We are using YouTube videos to analyze and predict tags associated with each video using Machine Learning techniques and find interesting trends by performing sentiment analysis using Natural Language Processing on the top 10 trending videos in YouTube using title, description and comments.
 
 ---------------------------------------------------------
 ## This is the Data Science (CS1951a) Final Project Website [[Click Here]](https://pengyangwu.github.io/CS1951a/)
