@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="webapp.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>
+
+  <!-- DO STUFF BEFORE PAGE LOADED -->
+  <script src="webapp.js"></script>
+	<title>YouTube Tag Search</title>
+  </head>
+
+  <body id="page_top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <nav class="navbar navbar-custom navbar-fixed-top">
+      <div class="container-fluid">
+<!--         <div class="navbar-header">
+          <a class="navbar-brand" href="#">YouTube Tag Search</a>
+        </div> -->
+        <ul class="nav navbar-nav navbar-right">
+          <li><li><a href="#viz">Visualizations</a></li></li>
+          <li><a href="../index.html"><span class="glyphicon glyphicon-log-out"></span> BLOG</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div id="wrapper">
+      <header class="info">
+        <div class="container-fluid">
+          <h1 align="center">YouTube Tag Search</h1>
+          <div id="about-app">
+            <p align="center">search for tags of youtube videos<br></p>
+          </div>
+        </div>
+      </header>
+      <div class="container search">
+        <form id="tag-search" class="navbar-form" role="search">
+          <div id="prefetch" class="form-group" >
+            <input type="text" id="query" class="form-control typeahead" data-provide="typeahead" placeholder="filter tags" onfocus="this.placeholder=''" onblur="this.placeholder='filter tags'">
+          </div>
+          <input type="submit" class="btn btn-default"></button>
+        </form>
+        <div id="error-message">tag is required and cannot be empty</div>
+      </div>
+
+
+      <table class="container-fluid table" style="width: 100%; overflow: hidden">
+        <tr class="row">
+          <td class="cell" id="tags-cell">  
+          <script type="text/javascript">
+            $.get('http://localhost:1881/loadTags', function(data) {
+              data.forEach(function(datum) {
+                var id=datum.tag.replace(/ /g , '-');
+                var obj = "<div id=" + id + " class='tag'>" + datum.tag + "</div>";
+                $('#tags-cell').append(obj);
+              });
+            })
+          </script>
+          </td>
+          <td class="cell" id="results-cell"> 
+
+            <div id="cN2EP1ZC5Rk" class="result">
+              <iframe id="frame0" src="https://www.youtube.com/embed/cN2EP1ZC5Rk"
+                width="560" height="315" frameborder="0" allowfullscreen></iframe>
+              <div class="onhover">
+                <div class="sentiment positive"><span class="glyphicon glyphicon-thumbs-up"></span>33.818</div>
+                <div class="go_to_youtube">
+                  <a href="http://youtube.com/watch?v=cN2EP1ZC5Rk">
+                    <span class="glyphicon glyphicon-new-window"></span>
+                  </a>
+                </div>
+              </div>
+            </div>  
+
+            <div id="yRu1gGu0AsU" class="result">
+              <iframe id="frame1" src="https://www.youtube.com/embed/yRu1gGu0AsU"
+                width="560" height="315" frameborder="0" allowfullscreen></iframe>
+              <div class="onhover">
+                <div class="sentiment positive"><span class="glyphicon glyphicon-thumbs-up"></span>9.667</div>
+                <div class="go_to_youtube">
+                  <a href="http://youtube.com/watch?v=yRu1gGu0AsU">
+                    <span class="glyphicon glyphicon-new-window"></span>
+                  </a>
+                </div>
+              </div>
+            </div>  
+            <div id="5y2OODNxcMY" class="result">
+              <iframe id="frame2" src="http://www.youtube.com/embed/5y2OODNxcMY"
+                width="560" height="315" frameborder="0" allowfullscreen></iframe>
+              <div class="onhover">
+                <div class="sentiment positive"><span class="glyphicon glyphicon-thumbs-up"></span>13.416</div>
+                <div class="go_to_youtube">
+                  <a href="http://youtube.com/watch?v=5y2OODNxcMY">
+                    <span class="glyphicon glyphicon-new-window"></span>
+                  </a>
+                </div>
+              </div>  
+            </div>  
+            <div id="UukWc9RbjBU" class="result">
+              <iframe id="frame3" src="http://www.youtube.com/embed/UukWc9RbjBU"
+                width="560" height="315" frameborder="0" allowfullscreen></iframe>
+              <div class="onhover">
+                <div class="sentiment positive"><span class="glyphicon glyphicon-thumbs-up"></span>16.409</div>
+                <div class="go_to_youtube">
+                  <a href="http://youtube.com/v=watch?UukWc9RbjBU">
+                    <span class="glyphicon glyphicon-new-window"></span>
+                  </a>
+                </div>
+              </div>
+            </div> 
+            <div id="-1b2u6_2-70" class="result">
+              <iframe id="frame4" src="http://www.youtube.com/embed/-1b2u6_2-70"
+                width="560" height="315" frameborder="0" allowfullscreen></iframe>
+              <div class="onhover">
+                <div class="sentiment positive"><span class="glyphicon glyphicon-thumbs-up"></span>19.856</div>
+                <div class="go_to_youtube">
+                  <a href="http://youtube.com/v=watch?-1b2u6_2-70">
+                    <span class="glyphicon glyphicon-new-window"></span>
+                  </a>
+                </div>
+              </div>
+            </div>  
+            <div id="NNKGs9eCx04" class="result">
+              <iframe id="frame5" src="http://www.youtube.com/embed/NNKGs9eCx04"
+                width="560" height="315" frameborder="0" allowfullscreen></iframe>
+              <div class="onhover">
+                <div class="sentiment positive"><span class="glyphicon glyphicon-thumbs-up"></span>33.232</div>
+                <div class="go_to_youtube">
+                  <a href="http://youtube.com/v=watch?NNKGs9eCx04">
+                    <span class="glyphicon glyphicon-new-window"></span>
+                  </a>
+                </div>
+              </div>
+            </div>  
+            <div id="5qDMqPmdFGU" class="result">
+              <iframe id="frame6" src="http://www.youtube.com/embed/5qDMqPmdFGU"
+                width="560" height="315" frameborder="0" allowfullscreen></iframe>
+              <div class="onhover">
+                <div class="sentiment positive"><span class="glyphicon glyphicon-thumbs-up"></span>33.027</div>
+                <div class="go_to_youtube">
+                  <a href="http://youtube.com/v=watch?5qDMqPmdFGU">
+                    <span class="glyphicon glyphicon-new-window"></span>
+                  </a>
+                </div>
+              </div>
+            </div>  
+            <div id="LIvZHPeYy6Q" class="result">
+              <iframe id="frame7" src="http://www.youtube.com/embed/LIvZHPeYy6Q"
+                width="560" height="315" frameborder="0" allowfullscreen></iframe>
+              <div class="onhover">
+                <div class="sentiment positive"><span class="glyphicon glyphicon-thumbs-up"></span>14.475</div>
+                <div class="go_to_youtube">
+                  <a href="http://youtube.com/watch?LIvZHPeYy6Q">
+                    <span class="glyphicon glyphicon-new-window"></span>
+                  </a>
+                </div>
+              </div>
+            </div>  
+            <div id="8ak0f0fiFyg" class="result">
+              <iframe id="frame8" src="http://www.youtube.com/embed/8ak0f0fiFyg"
+                width="560" height="315" frameborder="0" allowfullscreen></iframe>
+              <div class="onhover">
+                <div class="sentiment positive"><span class="glyphicon glyphicon-thumbs-up"></span>45.634</div>
+                <div class="go_to_youtube">
+                  <a href="http://youtube.com/watch?8ak0f0fiFyg">
+                    <span class="glyphicon glyphicon-new-window"></span>
+                  </a>
+                </div>
+              </div>
+            </div>  
+            <div id="aUoFVzS6GBY" class="result">
+              <iframe id="frame9" src="http://www.youtube.com/embed/aUoFVzS6GBY"
+                width="560" height="315" frameborder="0" allowfullscreen></iframe>
+              <div class="onhover">
+                <div class="sentiment positive"><span class="glyphicon glyphicon-thumbs-up"></span>35.717</div>
+                <div class="go_to_youtube">
+                  <a href="http://youtube.com/watch?aUoFVzS6GBY">
+                    <span class="glyphicon glyphicon-new-window"></span>
+                  </a>
+                </div>
+              </div>
+            </div>      
+          </td>
+        </tr>
+      </table>
+    </div>
+
+
+  </body>
+
+</html>
+

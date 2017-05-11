@@ -1,0 +1,11 @@
+module.exports = {
+  db: {
+    host     : 'localhost',
+    user     : 'LOCAL_DATABASE_USERNAME',
+    password : 'LOCAL_DATABASE_PASSWORD',
+    database : 'photosafe'
+  }
+}
+// Copy this file to the root directory as "config.js"
+// DO NOT DELETE OR RENAME THIS FILE DIRECTLY!
+// Then edit the info in the fields to match your local configuration.
