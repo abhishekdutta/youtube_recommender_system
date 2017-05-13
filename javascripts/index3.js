@@ -57,7 +57,7 @@ var colors = ['#dff69e',
 var flyingParticles = []; 
 		waitingParticles = [];
 // maximum z position for a particle
-		maxParticlesZ = 200; 
+		maxParticlesZ = 0; 
 
 // SPEED
 var speed = {x:0, y:0};
@@ -87,7 +87,7 @@ function init(){
     aspectRatio,
     nearPlane,
     farPlane);
-  camera.position.z = 2000;   // default 1000,  the size of everything
+  camera.position.z = 1500;   // default 1000,  the size of everything
   
   
   //create the renderer 
@@ -126,7 +126,7 @@ function init(){
 }
 
 function onWindowResize() {
-  HEIGHT = window.innerHeight;
+  HEIGHT = window.innerHeight-100;
   WIDTH = window.innerWidth;
   windowHalfX = WIDTH / 2;
   windowHalfY = HEIGHT / 2;
@@ -426,9 +426,9 @@ function createParticle(){
     h = 10 + Math.random()*30;
     d = 10 + Math.random()*30;
 
-    w/=10
-    h/=10
-    d/=10
+    // w/=10
+    // h/=10
+    // d/=10
     geometryCore = new THREE.BoxGeometry(w,h,d);
   }
   // TETRAHEDRON
@@ -442,9 +442,9 @@ function createParticle(){
     sh = 2 + Math.floor(Math.random()*2);
     sv = 2 + Math.floor(Math.random()*2);
 
-    ray/= 5
-    sh /= 5
-    sv /= 5
+    // ray/= 5
+    // sh /= 5
+    // sv /= 5
 
 
     geometryCore = new THREE.SphereGeometry(ray, sh, sv);

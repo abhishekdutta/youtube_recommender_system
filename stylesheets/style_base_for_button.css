@@ -18,10 +18,12 @@
 } */
 
 .back {
-    width: 33%;
-    height: 200px;
+    width: 50%;
+    height: 150px;
     float: left;
-    background-color: #eeeeee;
+    #background-color: #004466;
+	#background-color: #196dad;
+	background-color: #0069b0;
     border: 10px;
     border-color: #ffffff;
     border-style: solid;
@@ -33,7 +35,7 @@
 }
 
 .back:before {
-    content: counter(bc) "_";
+    #content: counter(bc) "_";
     position: absolute;
     padding: 10px;
 }
@@ -48,6 +50,11 @@
     .back {
         width: 100%;
     }
+}
+
+.back:hover {
+    border-color: #ffffb3;  /* #ffffb3;  this yellow is too bright*/
+	background-color: royalblue;
 }
 
 .button_base {
